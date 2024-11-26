@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo/logo.JPG" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul class="links">
+            <li><a href="admin.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#footer">Footer</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="cart-content">
+      <h1>Your Shopping Cart</h1>
+
+      <!-- Cart items will be dynamically inserted here -->
+      <div id="cart-items"></div>
+
+      <!-- Total Price Section -->
+      <div id="total-price">
+        <strong>Total: $<span id="total-amount">0.00</span></strong>
+      </div>
+      <button id="return-to-products-button" onclick="returnToProducts()">
+        Return to Products
+      </button>
+      <button id="checkout-button">Checkout</button>
+    </main>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
