@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css">
+  <body>
+    <h1>Admin Page - Add New Category</h1>
+    <form id="category-form">
+      <label for="category-name">Category Name:</label>
+      <input type="text" id="category-name" required />
+      <button type="button" onclick="addCategory()">Add Category</button>
+    </form>
+
+    <div id="admin-category-list">
+      <!-- This section will display categories to show current list -->
+    </div>
+    <h1>Admin Page - Add New Product</h1>
+    <form id="product-form">
+      <label for="product-name">Product Name:</label>
+      <input type="text" id="product-name" required /><br /><br />
+
+      <label for="product-description">Product Description:</label>
+      <textarea id="product-description" required></textarea><br /><br />
+
+      <label for="product-image">Product Image (URL):</label>
+      <input
+        type="text"
+        id="product-image"
+        placeholder="images/example.jpg"
+        required
+      /><br /><br />
+
+      <label for="product-category">Product Category:</label>
+      <select id="product-category" required></select
+      ><br /><br />
+      <label for="product-price">Price</label>
+      <input type="number" id="product-price" required />
+      <br />
+      <button type="button" onclick="addProduct()">Add Product</button>
+    </form>
+    <a href="index.html">return Home</a>
+
+    <h2>Existing Products</h2>
+    <div id="admin-product-list">
+      <!-- Product list with remove buttons will be rendered here -->
+    </div>
+    <div id="custom-alert" class="alert hidden">
+      <div class="alert-content">
+        <p id="alert-message">This is an alert message!</p>
+        <button id="close-alert">OK</button>
+      </div>
+  
+
+    <script src="category.js"></script>
+    <script src="product.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
