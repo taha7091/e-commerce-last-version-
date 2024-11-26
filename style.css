@@ -316,6 +316,37 @@ html {
   font-weight: 800;
   width: 240px;
 }
+.explore {
+  display: inline-block;
+  background-color: #4a90e2; /* Primary blue color */
+  color: white; /* Text color */
+  padding: 12px 24px; /* Padding for a larger button */
+  cursor: pointer; /* Hand pointer on hover */
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Smooth hover animation */
+  position: relative; /* Allows adding decorative effects */
+  background: linear-gradient(to right, #4a90e2, #357abd); /* Gradient */
+  border: 2px solid #4a90e2; /* Optional border */
+}
+
+.explore a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from the button */
+}
+
+.explore:hover {
+  background-color: #357abd; /* Darker blue on hover */
+  transform: translateY(-2px); /* Subtle upward movement */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.explore:active {
+  transform: translateY(0px); /* Reset movement when clicked */
+  box-shadow: none; /* Remove shadow on click */
+}
 
 /* Media Query for screens up to 768px */
 @media (max-width: 768px) {
