@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <!--navbar-->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo/logo.JPG" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="admin.html">Footer</a></li>
+          </ul>
+        </div>
+        <div class="ham"><span></span><span></span><span></span></div>
+      </nav>
+    </header>
+    <main>
+      <!--Hero Section-->
+      <div class="hero">
+        <h1>In Premuim We Trust</h1>
+        <p>All Car Accesories we Provide in High Quality</p>
+        <button class="herobtn">
+          <!--<a href="product.html">Explore More</a>-->
+        </button>
+      </div>
+      <!--Category section-->
+      <div class="categories">
+        <a href="product.html">List all categories</a>
+      </div>
+      <section id="home-category-list">
+        <!-- Categories will be displayed here by JavaScript -->
+      </section>
+      <div class="ad">
+        <div class="paraghraph-section">
+          <h3>Elevate Your Driving Experience with Premium Car Accesories</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus
+            id ut neque recusandae, cupiditate perspiciatis vitae laudantium
+            ratione iusto corporis eligendi ex tenetur, repudiandae alias vel
+            placeat laborum earum voluptatum.
+          </p>
+        </div>
+        <div class="image-section">
+          <img src="images/hero/drive.jpg" alt="image" />
+        </div>
+      </div>
+      <!-- customer feedback-->
+      <div class="feed">
+        <h2>Customer Feedback</h2>
+        <form id="feedbackForm">
+          <textarea
+            id="feedbackText"
+            placeholder="Enter your feedback here..."
+          ></textarea>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="aboutus.html">about us</a></li>
+              <li><a href="product.html">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="product.html">tires</a></li>
+              <li><a href="product.html">Rims</a></li>
+              <li><a href="product.html">Lights</a></li>
+              <li><a href="product.html">Interior</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="category.js"></script>
+  </body>
+</html>
