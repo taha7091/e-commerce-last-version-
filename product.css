@@ -1,0 +1,325 @@
+/* Sidebar styling */
+.sidebar {
+    height: auto; /* Full height of the viewport */
+    width: 250px; /* Width of the sidebar */
+    background-color: transparent; /* Dark background color */
+    position: absolute; /* Fixes the sidebar to the left side */
+    margin-top: 50px;
+    left: 0;
+    justify-content: center;
+  
+    padding: 20px; /* Adds padding inside the sidebar */
+    transform: translateY(300px);
+    color: #000; /* Text color */
+    z-index: 100; /* Ensures sidebar is on top of other content */
+  }
+  
+  /* Sidebar Heading */
+  .sidebar h2 {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  /* Sidebar Links Styling */
+  .sidebar ul {
+    list-style-type: none; /* Removes default list styling */
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0; /* Adds space between each link */
+  }
+  
+  .sidebar ul li a {
+    color: #000; /* Link color */
+    text-decoration: none; /* Removes underlines from links */
+    font-size: 18px;
+    display: block; /* Makes links span the entire width */
+    padding: 10px; /* Adds padding for clickable area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Sidebar Link Hover Effect */
+  .sidebar ul li a:hover {
+    background-color: #575757; /* Change background on hover */
+    border-radius: 5px; /* Optional: adds rounded corners on hover */
+  }
+  
+  /* Mobile-Friendly Sidebar */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; /* Slightly smaller sidebar on mobile */
+    }
+  }
+  .main-content h1 {
+    margin-left: 250px;
+  }
+  .product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 300px;
+    padding: 10px;
+  }
+  .product {
+    width: 300px; /* Set width */
+    height: auto; /* Set height */
+    background-color: #f2f2f2; /* Set background color */
+    border: 2px solid #ccc; /* Optional: border color */
+    border-radius: 10px solid black; /* Optional: rounded corners */
+    padding: 10px; /* Optional: inner spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 5px;
+  }
+  .product img {
+    width: 250px;
+    padding: 0 10px 0 10px;
+  }
+  .product-scroll-container {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks for child elements */
+    padding: 10px;
+  }
+  
+  #product-list {
+    display: flex; /* Aligns products in a row */
+    gap: 15px; /* Space between each product */
+  }
+  
+  .product {
+    min-width: 200px; /* Sets a minimum width to control product size */
+    flex-shrink: 0; /* Prevents items from shrinking */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  .product-price {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .remove-button:hover {
+    background-color: #c0392b;
+  }
+  /* General container for product list */
+  #product-list {
+    display: flex;
+    flex-direction: column; /* Makes sure categories are stacked vertically */
+    gap: 20px; /* Adds space between different category rows */
+    margin-bottom: 15px;
+  }
+  
+  /* Each category section */
+  .category-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between category header and product list */
+  }
+  
+  /* Category header */
+  .category-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  /* Row that contains the products for a category */
+  .category-product-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows products to wrap to the next line */
+    gap: 15px; /* Space between products */
+    justify-content: flex-start; /* Aligns products to the left */
+  }
+  
+  /* Individual product styling */
+  .product {
+    width: 200px; /* Fixed width for product */
+    height: auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  /* Product image styling */
+  .product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Product details styling */
+  .product-details {
+    margin-top: 10px;
+  }
+  
+  /* Product price styling */
+  .product-price {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Remove button styling */
+  .remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .remove-button:hover {
+    background-color: #c0392b;
+  }
+  .purchase-button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .purchase-button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  /* Popup container */
+  .popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    justify-content: center;
+    align-items: center;
+    z-index: 200; /* On top of other elements */
+  }
+  
+  /* Popup content */
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+  }
+  
+  .popup-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .popup-content h3 {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  .popup-content p {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+  
+  /* Close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  /* Alert Container */
+  .alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Show Alert */
+  .alert.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Alert Content */
+  .alert-content {
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    justify-content: center;
+    max-width: 400px;
+    height: 50px;
+    width: 90%;
+  }
+  
+  /* Alert Message */
+  .alert-content p {
+    margin: 0 0 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Close Button */
+  .alert-content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .alert-content button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--for the footer and the navbar-->
+    <link rel="stylesheet" href="product.css" />
+    <!--for the product page-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <!--navbar-->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo/logo.JPG" alt="logo" />
+        </div>
+        <div class="nav-links">
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="admin.html">Footer</a></li>
+          </ul>
+        </div>
+        <div class="ham" id="mobile-menu">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <ul id="category-list"></ul>
+    </div>
+
+    <main class="main-content">
+      <h1>Product List</h1>
+      <div id="product-list" class="product-list">
+        <!-- Products will be displayed here dynamically -->
+      </div>
+      <div id="product-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-button">&times;</span>
+          <img id="popup-image" src="" alt="Product Image" />
+          <h3 id="popup-name"></h3>
+          <p id="popup-description"></p>
+          <p id="popup-price"></p>
+        </div>
+      </div>
+      <div id="custom-alert" class="alert hidden">
+        <div class="alert-content">
+          <p id="alert-message">This is an alert message!</p>
+          <button id="close-alert">OK</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="aboutus.html">about us</a></li>
+              <li><a href="product.html">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="product.html">tires</a></li>
+              <li><a href="product.html">Rims</a></li>
+              <li><a href="product.html">Lights</a></li>
+              <li><a href="product.html">Interior</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
