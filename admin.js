@@ -80,17 +80,6 @@ if (document.getElementById("admin-category-list")) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Example product data
-    const sampleProducts = [
-        { name: 'Product 1', price: 100, imageUrl: 'product1.jpg', description: 'Detailed description of Product 1', category: 'Category 1' },
-        { name: 'Product 2', price: 150, imageUrl: 'product2.jpg', description: 'Detailed description of Product 2', category: 'Category 1' },
-        { name: 'Product 3', price: 200, imageUrl: 'product3.jpg', description: 'Detailed description of Product 3', category: 'Category 2' },
-    ];
-
-    // Store sample products in localStorage if not already present
-    if (!localStorage.getItem('products')) {
-        localStorage.setItem('products', JSON.stringify(sampleProducts));
-    }
 
     displayAdminProducts();
     enableSmoothScroll(); // Enable smooth scrolling after products are displayed
