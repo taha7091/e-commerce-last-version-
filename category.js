@@ -1,3 +1,13 @@
+// Get the hamburger icon and the menu
+const hamburger = document.querySelector('.ham');
+const menu = document.querySelector('.navbar');
+
+// Add a click event to toggle the 'active' class
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');  // Toggle animation on hamburger
+    menu.classList.toggle('active');  // Toggle menu visibility
+});
+
 function showAlert(message) {
     const alertBox = document.getElementById('custom-alert');
     const alertMessage = document.getElementById('alert-message');
