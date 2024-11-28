@@ -21,10 +21,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Complete Checkout
     document.getElementById('complete-checkout').addEventListener('click', () => {
-        alert('Thank you for your purchase!');
+        // Get the shipping information
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const zip = document.getElementById('zip').value;
+
+        if (!name || !address || !city || !zip) {
+            alert("Please fill in all shipping details before placing the order.");
+            return;
+        }
+
+        // Save order details to localStorage
+        const orderData = {
+            customerName: name,
+            address: `${address}, ${city}, ZIP: ${zip}`,
+            orderDetails: cartSummary,
+            totalPrice: totalPrice.toFixed(2),
+        };
+
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders.push(orderData);
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        // Reset the cart and checkout-related data
         localStorage.removeItem('cart');
         localStorage.removeItem('cartSummary');
-        window.location.href = 'product.html'; // Redirect to product page
+
+        alert('Order placed successfully!');
+        window.location.href = 'product.html'; // Redirect to admin page
     });
 
     // Reset Cart and Checkout

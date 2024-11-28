@@ -227,6 +227,49 @@ function enableSmoothScroll() {
         });
     });
 }
+// Load orders from localStorage
+const orders = JSON.parse(localStorage.getItem("orders")) || [];
+const tableBody = document.getElementById("orders-table-body");
+
+// Render orders in the table
+function renderOrders() {
+    tableBody.innerHTML = "";
+
+    if (orders.length === 0) {
+        tableBody.innerHTML =
+            '<tr><td colspan="5">No orders found.</td></tr>';
+        return;
+    }
+
+    orders.forEach((order, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+       <td>${order.customerName}</td>
+       <td>${order.address}</td>
+       <td>${order.orderDetails
+                .map((item) => `${item.name} x ${item.quantity}`)
+                .join("<br>")}</td>
+       <td>$${order.totalPrice}</td>
+       <td>
+         <button class="done-button" onclick="markOrderDone(${index})">Done</button>
+       </td>
+     `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+// Mark order as done
+function markOrderDone(index) {
+    orders.splice(index, 1); // Remove the order from the array
+    localStorage.setItem("orders", JSON.stringify(orders)); // Update localStorage
+    renderOrders(); // Re-render the table
+    alert("Order marked as done!");
+}
+
+// Initial render
+renderOrders();
 
 // Function to show an alert message
 function showAlert(message) {
@@ -278,3 +321,5 @@ function purchaseProduct(productName) {
     localStorage.setItem('cart', JSON.stringify(cart));
     showAlert(`${product.name} has been added to your cart!`);
 };
+
+
