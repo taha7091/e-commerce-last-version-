@@ -25,7 +25,7 @@ function displayAdminCategories() {
     });
 
     adminCategoryList.appendChild(ul);
-    populateCategoryOptions(); // Update the dropdown 
+    populateCategoryOptions();
 }
 
 // add a category from the admin page
@@ -37,7 +37,7 @@ function addCategory() {
         return;
     }
 
-    //local storage 
+
     let categories = JSON.parse(localStorage.getItem("categories")) || [];
 
 
@@ -55,7 +55,7 @@ function addCategory() {
     showAlert("Category added successfully!");
 }
 
-//  remove a category by its index
+//  remove a category 
 function removeCategory(index) {
     let categories = JSON.parse(localStorage.getItem("categories")) || [];
 
@@ -70,7 +70,7 @@ function removeCategory(index) {
 
 
 if (document.getElementById("home-category-list")) {
-    displayCategories();
+    displayAdminCategories();
 }
 
 
@@ -82,16 +82,16 @@ if (document.getElementById("admin-category-list")) {
 document.addEventListener('DOMContentLoaded', () => {
 
     displayAdminProducts();
-    enableSmoothScroll(); // Enable smooth scrolling after products are displayed
+    enableSmoothScroll();
 });
 
-// Function to display products dynamically and update categories
+// Function to display products 
 function displayAdminProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const productList = document.getElementById('product-list');
-    const sidebar = document.querySelector('.sidebar ul'); // Sidebar list for categories
+    const sidebar = document.querySelector('.sidebar ul');
 
-    // Group products by category
+
     const categories = {};
     products.forEach(product => {
         if (!categories[product.category]) {
@@ -105,7 +105,7 @@ function displayAdminProducts() {
         const categoryItem = document.createElement('li');
         const categoryLink = document.createElement('a');
         categoryLink.textContent = category;
-        categoryLink.href = `#${category}`; // Link to filtered product section by category ID
+        categoryLink.href = `#${category}`;
         categoryItem.appendChild(categoryLink);
         sidebar.appendChild(categoryItem);
     });
@@ -114,7 +114,7 @@ function displayAdminProducts() {
     Object.keys(categories).forEach(category => {
         const categorySection = document.createElement('div');
         categorySection.classList.add('category-section');
-        categorySection.id = category; // Set the ID to match the sidebar link
+        categorySection.id = category;
 
         const categoryHeader = document.createElement('h2');
         categoryHeader.classList.add('category-header');
@@ -136,17 +136,17 @@ function displayAdminProducts() {
                 </div>
             `;
 
-            // Add event listener for product popup
+
             productDiv.addEventListener('click', event => {
                 if (!event.target.classList.contains('purchase-button')) {
                     showProductPopup(product);
                 }
             });
 
-            // Add event listener for purchase button
+
             const purchaseButton = productDiv.querySelector('.purchase-button');
             purchaseButton.addEventListener('click', event => {
-                event.stopPropagation(); // Prevent the popup from opening
+                event.stopPropagation();
                 purchaseProduct(product.name);
             });
 
@@ -157,7 +157,7 @@ function displayAdminProducts() {
         productList.appendChild(categorySection);
     });
 
-    // Add the popup HTML structure to the document
+
     addPopupStructure();
 }
 
@@ -169,13 +169,12 @@ function showProductPopup(product) {
     const popupDescription = document.getElementById('popup-description');
     const popupPrice = document.getElementById('popup-price');
 
-    // Populate popup with product details
     popupImage.src = product.imageUrl;
     popupName.textContent = product.name;
     popupDescription.textContent = product.description || 'No description available.';
     popupPrice.textContent = `$${product.price}`;
 
-    // Show popup
+
     popup.style.display = 'flex';
 }
 
@@ -185,12 +184,12 @@ function hideProductPopup() {
     popup.style.display = 'none';
 }
 
-// Add the popup HTML structure dynamically to the page
+
 function addPopupStructure() {
     const popupDiv = document.createElement('div');
     popupDiv.id = 'product-popup';
     popupDiv.classList.add('popup');
-    popupDiv.style.display = 'none'; // Hidden by default
+    popupDiv.style.display = 'none';
     popupDiv.innerHTML = `
         <div class="popup-content">
             <button class="close-button">X</button>
@@ -202,20 +201,20 @@ function addPopupStructure() {
     `;
     document.body.appendChild(popupDiv);
 
-    // Add event listener to the close button
+
     const closeButton = document.querySelector('.close-button');
     closeButton.addEventListener('click', hideProductPopup);
 }
 
-// Function to enable smooth scrolling for category navigation
+
 function enableSmoothScroll() {
     const sidebarLinks = document.querySelectorAll('.sidebar ul a');
 
     sidebarLinks.forEach(link => {
         link.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
 
-            const targetId = link.getAttribute('href').substring(1); // Get the category ID
+            const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
@@ -227,7 +226,7 @@ function enableSmoothScroll() {
         });
     });
 }
-// Load orders from localStorage
+
 const orders = JSON.parse(localStorage.getItem("orders")) || [];
 const tableBody = document.getElementById("orders-table-body");
 
@@ -268,7 +267,7 @@ function markOrderDone(index) {
     alert("Order marked as done!");
 }
 
-// Initial render
+
 renderOrders();
 
 // Function to show an alert message
@@ -277,20 +276,18 @@ function showAlert(message) {
     const alertMessage = document.getElementById('alert-message');
     const closeButton = document.getElementById('close-alert');
 
-    // Set the alert message
+
     alertMessage.textContent = message;
 
-    // Show the alert
     alertBox.classList.remove('hidden');
     alertBox.classList.add('visible');
 
-    // Close alert on button click
+
     closeButton.addEventListener('click', () => {
         alertBox.classList.remove('visible');
         alertBox.classList.add('hidden');
     });
 
-    // Optional: Close alert when clicking outside the alert content
     alertBox.addEventListener('click', (event) => {
         if (event.target === alertBox) {
             alertBox.classList.remove('visible');

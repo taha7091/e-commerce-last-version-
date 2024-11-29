@@ -1,11 +1,11 @@
-// Get the hamburger icon and the menu
+
 const hamburger = document.querySelector('.ham');
 const menu = document.querySelector('.navbar');
 
-// Add a click event to toggle the 'active' class
+
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');  // Toggle animation on hamburger
-    menu.classList.toggle('active');  // Toggle menu visibility
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
 });
 
 function showAlert(message) {
@@ -18,20 +18,20 @@ function showAlert(message) {
         return;
     }
 
-    // Set the alert message
+
     alertMessage.textContent = message;
 
-    // Show the alert
+
     alertBox.classList.remove('hidden');
     alertBox.classList.add('visible');
 
-    // Add event listener for the close button
+
     closeButton.onclick = () => {
         alertBox.classList.remove('visible');
         alertBox.classList.add('hidden');
     };
 
-    // Optional: Close the alert by clicking outside the content
+
     alertBox.addEventListener('click', (event) => {
         if (event.target === alertBox) {
             alertBox.classList.remove('visible');
@@ -57,7 +57,7 @@ function loadCategories() {
     const categorySelect = document.getElementById('product-category');
     const adminCategoryList = document.getElementById('admin-category-list');
 
-    // Populate the category dropdown
+
     categorySelect.innerHTML = '';
     categories.forEach((category) => {
         const option = document.createElement('option');
@@ -66,7 +66,7 @@ function loadCategories() {
         categorySelect.appendChild(option);
     });
 
-    // Display existing categories in the admin category list
+
     adminCategoryList.innerHTML = '';
     categories.forEach((category) => {
         const categoryItem = document.createElement('div');
@@ -76,7 +76,7 @@ function loadCategories() {
 }
 
 
-//display categories for the homepage without the removebutton
+
 function displayCategories() {
     const categories = JSON.parse(localStorage.getItem("categories")) || [];
     const categoryList = document.getElementById("home-category-list") || document.getElementById("admin-category-list");
@@ -97,22 +97,22 @@ function displayCategories() {
     populateCategoryOptions();
 }
 
-// select option 
+
 function populateCategoryOptions() {
     const categories = JSON.parse(localStorage.getItem("categories")) || [];
     const categorySelect = document.getElementById("product-category");
 
     if (!categorySelect) return;
 
-    categorySelect.innerHTML = ""; // Clear previous options
+    categorySelect.innerHTML = "";
 
-    //  default "Select a category" option
+
     const defaultOption = document.createElement("option");
     defaultOption.textContent = "Select a category";
     defaultOption.value = "";
     categorySelect.appendChild(defaultOption);
 
-    // Add categories as options in the <select> element
+
     categories.forEach(category => {
         const option = document.createElement("option");
         option.value = category;
@@ -147,10 +147,10 @@ function displayAdminCategories() {
     });
 
     adminCategoryList.appendChild(ul);
-    populateCategoryOptions(); // Update the dropdown 
+    populateCategoryOptions();
 }
 
-// add a category from the admin page
+
 function addCategory() {
     const categoryName = document.getElementById("category-name").value.trim();
 
@@ -159,7 +159,7 @@ function addCategory() {
         return;
     }
 
-    //local storage 
+
     let categories = JSON.parse(localStorage.getItem("categories")) || [];
 
 

@@ -90,7 +90,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* List Container Styles */
 #admin-category-list {
   max-width: 800px;
   margin: 0 auto 30px auto;
@@ -106,9 +105,9 @@ a:hover {
 }
 #admin-product-list {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  justify-content: space-between; /* Adds spacing between rows */
-  gap: 15px; /* Adds spacing between items */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
   max-width: 800px;
   margin: 0 auto 30px auto;
   padding: 15px;
@@ -119,9 +118,9 @@ a:hover {
 }
 
 .admin-product-item {
-  flex: 1 1 calc(25% - 15px); /* Each product takes up 25% width minus gap */
-  max-width: calc(25% - 15px); /* Ensures items don’t grow too large */
-  box-sizing: border-box; /* Includes padding and border in size */
+  flex: 1 1 calc(25% - 15px);
+  max-width: calc(25% - 15px);
+  box-sizing: border-box;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -131,14 +130,12 @@ a:hover {
 }
 
 .product-image {
-  width: 100%; /* Ensures the image fits within the product item */
+  width: 100%;
   height: auto;
-  max-height: 200px; /* Restricts height to keep layout consistent */
-  object-fit: cover; /* Prevents image distortion */
+  max-height: 200px;
+  object-fit: cover;
 }
 
-/*Alert Box */
-/* General Alert Styles */
 .alert {
   position: fixed;
   top: 0;
@@ -148,20 +145,18 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show Alert */
 .alert.visible {
   opacity: 1;
   visibility: visible;
 }
 
-/* Alert Content */
 .alert-content {
   background-color: #fff;
   padding: 20px;
@@ -169,17 +164,15 @@ a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   max-width: 400px;
-  width: 90%; /* Makes it responsive */
+  width: 90%;
 }
 
-/* Alert Message */
 .alert-content p {
   margin: 0 0 15px;
   font-size: 16px;
   color: #333;
 }
 
-/* Close Button */
 .alert-content button {
   background-color: #007bff;
   color: #fff;
@@ -191,7 +184,6 @@ a:hover {
   transition: background-color 0.3s;
 }
 
-/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -201,8 +193,8 @@ table {
 }
 
 thead {
-  background-color: #4caf50; /* Green background for header */
-  color: white; /* White text for header */
+  background-color: #4caf50;
+  color: white;
 }
 
 thead th {
@@ -215,7 +207,7 @@ tbody tr {
 }
 
 tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3; /* Alternate row colors */
+  background-color: #f3f3f3;
 }
 
 tbody tr:last-of-type {
@@ -228,16 +220,14 @@ td {
 
 th,
 td {
-  text-align: center; /* Center align table content */
+  text-align: center;
 }
 
-/* Hover effect for rows */
 tbody tr:hover {
   background-color: #f1f1f1;
   cursor: pointer;
 }
 
-/* Button inside table */
 .done-button {
   background-color: #28a745;
   color: white;
@@ -259,52 +249,52 @@ tbody tr:hover {
   }
 
   .nav-links {
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: column;
     gap: 10px;
   }
 
   form {
     padding: 15px;
-    max-width: 90%; /* Reduce the form width for smaller screens */
+    max-width: 90%;
   }
 
   #admin-category-list,
   #admin-product-list {
     padding: 10px;
-    max-width: 100%; /* Full width for smaller devices */
+    max-width: 100%;
   }
 
   .admin-product-item {
-    flex: 1 1 calc(50% - 10px); /* Each item takes 50% width */
-    max-width: calc(50% - 10px); /* Adjust size dynamically */
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
   }
 
   .product-image {
-    max-height: 150px; /* Reduce image height */
+    max-height: 150px;
   }
 
   table {
-    width: 100%; /* Ensure the table spans full width */
-    overflow-x: auto; /* Add horizontal scroll for content overflow */
-    font-size: 12px; /* Adjust font size for readability */
+    width: 100%;
+    overflow-x: auto;
+    font-size: 12px;
   }
 
   th,
   td {
-    padding: 8px; /* Adjust cell padding */
-    text-align: left; /* Align text for better readability */
+    padding: 8px;
+    text-align: left;
   }
 }
 
 /* Media Query for Devices with Width 400px or Less */
 @media (max-width: 400px) {
   body {
-    font-size: 14px; /* Reduce font size for better fit */
+    font-size: 14px;
   }
 
   .nav-links a {
-    padding: 8px 10px; /* Smaller padding for links */
-    font-size: 14px; /* Adjust font size */
+    padding: 8px 10px;
+    font-size: 14px;
   }
 
   form {
@@ -315,11 +305,11 @@ tbody tr:hover {
   input[type="number"],
   textarea,
   select {
-    font-size: 12px; /* Smaller input text size */
+    font-size: 12px;
   }
 
   button {
-    padding: 5px 8px; /* Smaller button padding */
+    padding: 5px 8px;
   }
 
   #admin-category-list,
@@ -329,32 +319,32 @@ tbody tr:hover {
   }
 
   .admin-product-item {
-    flex: 1 1 100%; /* Full width for each item */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 
   .product-image {
-    max-height: 100px; /* Further reduce image height */
+    max-height: 100px;
   }
 
   .alert-content {
-    padding: 15px; /* Reduce padding in alert */
-    font-size: 14px; /* Smaller font size */
+    padding: 15px;
+    font-size: 14px;
   }
 
   table {
-    font-size: 10px; /* Reduce font size for better fit */
-    width: 100%; /* Allow table to shrink */
-    overflow-x: auto; /* Enable horizontal scroll for overflow */
-    display: block; /* Wrap table in a scrollable container */
+    font-size: 10px;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
   }
 
   th,
   td {
-    padding: 6px; /* Reduce cell padding */
+    padding: 6px;
   }
 
   .done-button {
-    padding: 6px 10px; /* Adjust button size in table */
+    padding: 6px 10px;
   }
 }

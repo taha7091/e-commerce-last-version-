@@ -9,20 +9,19 @@ function showAlert(message) {
         return;
     }
 
-    // Set the alert message
     alertMessage.textContent = message;
 
-    // Show the alert
+
     alertBox.classList.remove('hidden');
     alertBox.classList.add('visible');
 
-    // Add event listener for the close button
+
     closeButton.onclick = () => {
         alertBox.classList.remove('visible');
         alertBox.classList.add('hidden');
     };
 
-    // Optional: Close the alert by clicking outside the content
+
     alertBox.addEventListener('click', (event) => {
         if (event.target === alertBox) {
             alertBox.classList.remove('visible');
@@ -31,7 +30,7 @@ function showAlert(message) {
     });
 }
 
-// Display categories for the homepage without the remove button
+
 function displayCategories() {
     const categories = JSON.parse(localStorage.getItem("categories")) || [];
     const categoryList = document.getElementById("home-category-list") || document.getElementById("admin-category-list");
@@ -59,15 +58,15 @@ function populateCategoryOptions() {
 
     if (!categorySelect) return;
 
-    categorySelect.innerHTML = ""; // Clear previous options
+    categorySelect.innerHTML = "";
 
-    // Default "Select a category" option
+
     const defaultOption = document.createElement("option");
     defaultOption.textContent = "Select a category";
     defaultOption.value = "";
     categorySelect.appendChild(defaultOption);
 
-    // Add categories as options in the <select> element
+
     categories.forEach(category => {
         const option = document.createElement("option");
         option.value = category;
@@ -84,7 +83,7 @@ function addProduct() {
     const category = document.getElementById('product-category').value;
     const price = document.getElementById('product-price').value;
 
-    // Check if all fields are filled
+
     if (!name || !description || !imageUrl || !category || !price) {
         showAlert("Please fill out all product fields.");
         return;
@@ -92,28 +91,28 @@ function addProduct() {
 
     const product = { name, description, imageUrl, category, price };
 
-    // Get the existing products from localStorage and add the new product
+
     let products = JSON.parse(localStorage.getItem('products')) || [];
     products.push(product);
 
-    // Save the updated list back to localStorage
+
     localStorage.setItem('products', JSON.stringify(products));
 
-    // Reset the form after adding the product
+
     document.getElementById('product-form').reset();
 
-    // Show success alert
+
     showAlert("Product added successfully!");
 
-    // Now update the product list displayed in the admin panel
-    displayAdminProducts(); // This will immediately refresh the product list on the page
+
+    displayAdminProducts();
 }
 
 // Display products in the admin page (this function will be called to refresh the list)
 function displayAdminProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const adminProductList = document.getElementById('admin-product-list');
-    adminProductList.innerHTML = ''; // Clear the list before rendering
+    adminProductList.innerHTML = '';
 
     products.forEach((product, index) => {
         const productDiv = document.createElement('div');
@@ -130,26 +129,26 @@ function displayAdminProducts() {
         adminProductList.appendChild(productDiv);
     });
 
-    // Add event listeners to all "Remove" buttons
+
     const removeButtons = document.querySelectorAll('.remove-button');
     removeButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
-            removeProduct(index); // Call the removeProduct function
+            removeProduct(index);
         });
     });
 }
 
-// Remove a product from the list
+
 function removeProduct(index) {
     let products = JSON.parse(localStorage.getItem('products')) || [];
-    products.splice(index, 1); // Remove the product from the array
-    localStorage.setItem('products', JSON.stringify(products)); // Update localStorage
+    products.splice(index, 1);
+    localStorage.setItem('products', JSON.stringify(products));
     showAlert("Product removed successfully!");
-    displayAdminProducts(); // Re-render the product list immediately
+    displayAdminProducts();
 }
 
-// Ensure products are displayed when the page loads
+
 if (document.getElementById('admin-product-list')) {
     displayAdminProducts();
 }
@@ -175,13 +174,13 @@ function loadProducts() {
     });
 }
 
-// Remove a product from the list on the product page (not admin)
+
 function removeProductFromPage(index) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     products.splice(index, 1);
     localStorage.setItem('products', JSON.stringify(products));
 
-    // Reload the product display
+
     loadProducts();
     showAlert('Product removed successfully!');
 }
