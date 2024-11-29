@@ -320,3 +320,66 @@
 .alert-content button:hover {
   background-color: #0056b3;
 }
+/* Media query for devices with a max width of 768px */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduce sidebar width */
+    transform: translateY(0); /* Adjust position */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .main-content h1 {
+    margin-left: 210px; /* Adjust main content margin */
+  }
+
+  .product-list {
+    margin-left: 220px; /* Adjust product list margin */
+  }
+
+  .product {
+    width: 180px; /* Reduce product width */
+  }
+
+  .popup-content {
+    max-width: 90%; /* Make popup content more flexible */
+  }
+}
+
+/* Media query for devices with a max width of 400px */
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%; /* Full-width sidebar */
+    position: relative; /* Change position to relative */
+    transform: none; /* Remove translate effects */
+  }
+
+  .main-content h1 {
+    margin-left: 0; /* Remove left margin */
+    text-align: center; /* Center align title */
+  }
+
+  .product-list {
+    margin-left: 0; /* Remove left margin */
+    flex-direction: column; /* Stack products vertically */
+    gap: 10px; /* Adjust spacing */
+  }
+
+  .product {
+    width: 100%; /* Full-width products */
+  }
+
+  .popup-content {
+    width: 100%; /* Full-width popup content */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .alert-content {
+    padding: 20px; /* Adjust padding */
+    width: 90%; /* Full-width alert box */
+  }
+
+  .alert-content button {
+    font-size: 12px; /* Smaller button text */
+    padding: 8px 15px; /* Adjust padding */
+  }
+}

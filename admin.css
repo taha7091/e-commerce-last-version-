@@ -252,7 +252,6 @@ tbody tr:hover {
 .done-button:hover {
   background-color: #218838;
 }
-
 /* Media Query for Devices with Width 768px or Less */
 @media (max-width: 768px) {
   body {
@@ -282,6 +281,18 @@ tbody tr:hover {
 
   .product-image {
     max-height: 150px; /* Reduce image height */
+  }
+
+  table {
+    width: 100%; /* Ensure the table spans full width */
+    overflow-x: auto; /* Add horizontal scroll for content overflow */
+    font-size: 12px; /* Adjust font size for readability */
+  }
+
+  th,
+  td {
+    padding: 8px; /* Adjust cell padding */
+    text-align: left; /* Align text for better readability */
   }
 }
 
@@ -332,7 +343,15 @@ tbody tr:hover {
   }
 
   table {
-    font-size: 5px; /* Smaller table font */
+    font-size: 10px; /* Reduce font size for better fit */
+    width: 100%; /* Allow table to shrink */
+    overflow-x: auto; /* Enable horizontal scroll for overflow */
+    display: block; /* Wrap table in a scrollable container */
+  }
+
+  th,
+  td {
+    padding: 6px; /* Reduce cell padding */
   }
 
   .done-button {
